@@ -1,6 +1,8 @@
+var out='';
+
 function inintTodo() {
-    var out='';
-    $('#server-answer').append(out);
+    out='';
+    $('.todo-tr').remove();
     $.ajax({
         type: 'POST',
         url: 'core.php',
@@ -17,14 +19,13 @@ function ifSuccess(data) {
     todoList = JSON.parse(data);
     console.log(todoList);
     out +='<table class="bordered">';
-    out +='<thead><tr><th>№п/п</th>';
-    out +='<th>Название задачи</th>';
+    out +='<thead class="todo-tr">';
+    out +='<tr><th>Название задачи</th>';
     out +='<th>Описание задачи</th>';
     out +='<th>Удалить задачу</th></thead> ';
 
     for (var key in todoList){
-
-        out +='<tr><td>' + key +'</td>';
+        out +='<tr class="todo-tr">';
         out +='<td>' + todoList[key].head +'</td>';
         out +='<td>' + todoList[key].body +'</td>';
         out +='<td><button class="waves-effect waves-light btn" data-id="'+todoList[key].id+'">Удалить</button> </td></tr>';
@@ -35,7 +36,6 @@ function ifSuccess(data) {
 }
 
 function deleteTask() {
-    $(this).css('color','red');
     var idButton = $(this).data("id");
     console.log(idButton);
 
@@ -54,7 +54,8 @@ function deleteTask() {
 }
 
 
-function createTask(){
+function createTask(event){
+    event.preventDefault();
     console.log($('#title_todo').val());
     console.log($('#desc_todo').val());
     $.ajax({
@@ -68,6 +69,8 @@ function createTask(){
         success: function (data) {
             console.log(data);
             inintTodo();
+            $('#title_todo').val('');
+            $('#desc_todo').val('');
         }
     });
 
