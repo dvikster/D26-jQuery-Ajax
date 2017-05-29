@@ -1,5 +1,6 @@
 $(document).ready(function () {
         $('#send-answer').on('click', getAnswer);
+        $('#send-answer2').on('click', signPass);
 
 });
 
@@ -16,4 +17,21 @@ function getAnswer() {
 
 function ifSuccess(data) {
     $('#server-answer').html(data);
+}
+
+function signPass() {
+    console.log($('#name').val());
+    console.log($('#pass').val());
+    $.post(
+        '2.php',
+        {
+            'name': $('#name').val(),
+            'pass': $('#pass').val()
+        },
+        ifSuccess2
+    );
+}
+
+function ifSuccess2(data) {
+    $('#server-answer2').html(data);
 }
