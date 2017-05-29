@@ -17,7 +17,7 @@
     <div class="container">
         <div class="row">
             <div class="col s12">
-               <p>Cоздайте input куда пользователь может ввести число
+               <p>1. Cоздайте input куда пользователь может ввести число
                    <br>c помощью AJAX передайте число методом GET в этот скрипт
                    <br>в переменную num.
                    <br>выведите ответ сервера
@@ -41,7 +41,7 @@
     <div class="container">
         <div class="row">
             <div class="col s12">
-                <p>Метод POST, переменные name и pass
+                <p>2. Метод POST, переменные name и pass
                    <br>если они равны alex и  5577 - скрипт разрешит доступ, в противном случае - ошибка
                    <br>данные берем из input
                 </p>
@@ -66,9 +66,64 @@
     </div>
 </div>
 
-<footer>
 
-</footer>
+<div class="container">
+    <div class="row">
+        <div class="col s12">
+            <p>3-4. Пользователь выбирает из radiobutton одну из двух опций.
+               <br>если пользователь выбрал первую опцию, с помощью AJAX вызовите
+               <br>файл 3.php если опцию 2 - вызовите файл 4.php
+               <br>ответ сервера выведите в параграф
+            </p>
+        </div>
+        <div class="input-field col s12">
+            <input name="file" type="radio" id="file3"/>
+            <label for="file3">первая опция</label>
+
+        </div>
+        <div class="input-field col s12">
+            <input name="file" type="radio" id="file4" />
+            <label for="file4">вторая опция</label>
+        </div>
+        <div class="input-field col s12">
+            <a id="send-answer3" class="waves-effect waves-light btn"><i class="material-icons right">poll</i>Получить ответ</a>
+        </div>
+    </div>
+    <div class="row">
+        <div class="input-field col s12">
+            <p id="server-answer3"></p>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col s12">
+            <p>5. Загрузите содержимое файла 5.json в переменную. Выведите shopperName, shopperEmail, productName в консоль.
+            </p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="input-field col s12">
+            <p id="server-answer5"></p>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col s12">
+            <p>6. Используя технологию <b>AJAX</b> загрузите содержимое этого файла в параграф на странице.
+                Чтобы включить двойные кавычки в строку, нужно использовать <b>обратную косую черту</b>: \". Так же, как и во многих языках программирования, можно <i>помещать управляющие символы</i> и шестнадцатеричные коды в строку, предваряя их обратной косой чертой
+            </p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="input-field col s12">
+            <p id="task6"></p>
+        </div>
+    </div>
+</div>
 <!--Import jQuery before materialize.js-->
 <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 <script src="js/materialize.min.js"></script>

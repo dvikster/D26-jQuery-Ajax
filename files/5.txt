@@ -1,0 +1,1 @@
+Загрузите содержимое файла 5.json в переменную. Выведите shopperName, shopperEmail, productName в консоль.
