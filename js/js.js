@@ -1,6 +1,6 @@
 $(document).ready(function () {
-        $('#send-answer').on('click', getAnswer);
-        $('#send-answer2').on('click', signPass);
+    $('#send-answer').on('click', getAnswer);
+    $('#send-answer2').on('click', signPass);
 
 });
 
